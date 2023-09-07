@@ -2,6 +2,9 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import plotly.express as px
+from backend import get_data
+import os
+
 
 st.set_page_config(page_title="Weather Forecast", layout="centered", page_icon="🌦️")
 
@@ -21,11 +24,7 @@ if loc != '':
     else:
         placeholder.subheader(f"{forecast_opt} for the next day in {loc.title()}")
 
-    def get_data(days):
-        fake_dates = ["07-09-2023", "08-09-2023","09-09-2023","10-09-2023","11-09-2023"]
-        fake_temp = [10, 15, 16, 18, 12]
-        fake_temp = [days * i for i in fake_temp]
-        return fake_dates, fake_temp   
+    data = get_data(loc, num_days, forecast_opt)
     
     d, t = get_data(num_days)
 
