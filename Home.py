@@ -55,6 +55,3 @@ if loc:
     except Exception as e:
         placeholder.warning("An error has occured, this has been reported internally. Please wait for this to be addressed.", icon="❗️")
         print(f"Error, likely an invalid response/ API timeout\nError: {e}")
-
-# Two issues : 1 temp (addressed) - Error if a place doesnt exist? 
-        
